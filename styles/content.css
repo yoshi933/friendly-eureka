@@ -1,0 +1,160 @@
+/* ============================================================
+   content.css – injected styles for Better Classroom UX
+   ============================================================ */
+
+/* ── Search bar container ───────────────────────────────────── */
+#bcux-search-bar {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  background: #fff;
+  border-bottom: 2px solid #1a73e8;
+  padding: 10px 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  font-family: "Google Sans", Roboto, Arial, sans-serif;
+}
+
+.bcux-search-inner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ── Search icon ────────────────────────────────────────────── */
+.bcux-search-icon {
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+/* ── Search input ───────────────────────────────────────────── */
+.bcux-search-input {
+  flex: 1;
+  min-width: 0;
+  height: 38px;
+  padding: 0 12px;
+  border: 1px solid #dadce0;
+  border-radius: 24px;
+  font-size: 14px;
+  color: #202124;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.bcux-search-input:focus {
+  border-color: #1a73e8;
+  box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.2);
+}
+
+/* ── Course filter select ───────────────────────────────────── */
+.bcux-filter-select {
+  height: 38px;
+  padding: 0 10px;
+  border: 1px solid #dadce0;
+  border-radius: 6px;
+  font-size: 13px;
+  color: #202124;
+  background: #fff;
+  cursor: pointer;
+  outline: none;
+  flex-shrink: 0;
+}
+
+.bcux-filter-select:focus {
+  border-color: #1a73e8;
+}
+
+/* ── Search button ──────────────────────────────────────────── */
+.bcux-search-btn {
+  height: 38px;
+  padding: 0 18px;
+  background: #1a73e8;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.2s;
+}
+
+.bcux-search-btn:hover {
+  background: #1557b0;
+}
+
+.bcux-search-btn:active {
+  background: #0d47a1;
+}
+
+/* ── Results panel ──────────────────────────────────────────── */
+.bcux-search-results {
+  display: none;
+  max-width: 900px;
+  margin: 10px auto 0;
+  max-height: 60vh;
+  overflow-y: auto;
+  border: 1px solid #dadce0;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.bcux-search-results.bcux-results-visible {
+  display: block;
+}
+
+/* ── Results count / meta messages ─────────────────────────── */
+.bcux-results-count,
+.bcux-no-results,
+.bcux-loading,
+.bcux-error {
+  margin: 0;
+  padding: 10px 16px;
+  font-size: 13px;
+  color: #5f6368;
+  border-bottom: 1px solid #f1f3f4;
+}
+
+.bcux-error {
+  color: #c5221f;
+}
+
+/* ── Individual result item ─────────────────────────────────── */
+.bcux-result-item {
+  padding: 12px 16px;
+  border-bottom: 1px solid #f1f3f4;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.bcux-result-item:last-child {
+  border-bottom: none;
+}
+
+.bcux-result-item:hover {
+  background: #f8f9fa;
+}
+
+.bcux-result-author {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1a73e8;
+  margin-bottom: 4px;
+}
+
+.bcux-result-body {
+  font-size: 14px;
+  color: #202124;
+  line-height: 1.5;
+  margin-bottom: 6px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.bcux-result-meta {
+  display: flex;
+  gap: 16px;
+  font-size: 12px;
+  color: #80868b;
+}

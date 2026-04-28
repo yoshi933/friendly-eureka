@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Better Classroom UX – Options</title>
+  <link rel="stylesheet" href="styles/options.css" />
+</head>
+<body>
+  <header class="bcux-options-header">
+    <h1>Better Classroom UX</h1>
+    <p class="bcux-options-subtitle">Configure the extension to suit your workflow.</p>
+  </header>
+
+  <main class="bcux-options-main">
+
+    <!-- Notifications section -->
+    <section class="bcux-options-section">
+      <h2>Notifications</h2>
+
+      <div class="bcux-options-row">
+        <label class="bcux-toggle-label" for="notificationsEnabled">
+          Enable push notifications for new posts
+        </label>
+        <label class="bcux-toggle">
+          <input type="checkbox" id="notificationsEnabled" />
+          <span class="bcux-toggle-slider"></span>
+        </label>
+      </div>
+
+      <div class="bcux-options-row">
+        <label for="pollInterval">Polling interval (minutes)</label>
+        <input
+          type="number"
+          id="pollInterval"
+          class="bcux-number-input"
+          min="1"
+          max="60"
+          value="5"
+        />
+      </div>
+    </section>
+
+    <!-- Search / cache section -->
+    <section class="bcux-options-section">
+      <h2>Search &amp; Cache</h2>
+
+      <div class="bcux-options-row">
+        <label>Cached post count</label>
+        <span id="cachedPostCount" class="bcux-stat-value">–</span>
+      </div>
+
+      <div class="bcux-options-row">
+        <label>Pinned post count</label>
+        <span id="pinnedPostCount" class="bcux-stat-value">–</span>
+      </div>
+
+      <div class="bcux-options-row bcux-options-row--action">
+        <button id="clearCacheBtn" class="bcux-btn bcux-btn--danger">
+          Clear post cache
+        </button>
+        <button id="clearPinsBtn" class="bcux-btn bcux-btn--secondary">
+          Clear all pins
+        </button>
+      </div>
+    </section>
+
+    <!-- About section -->
+    <section class="bcux-options-section">
+      <h2>About</h2>
+      <p>
+        <strong>Better Classroom UX</strong> v0.1.0 – an open-source Chrome Extension
+        to improve Google Classroom usability.<br />
+        All data is stored locally on your device. Nothing is sent to external servers.
+      </p>
+      <p class="bcux-options-disclaimer">
+        ⚠️ Please verify compliance with your school's terms of service and
+        administrator policies before using this extension.
+      </p>
+    </section>
+
+  </main>
+
+  <footer class="bcux-options-footer">
+    <button id="saveBtn" class="bcux-btn bcux-btn--primary">Save settings</button>
+    <span id="saveStatus" class="bcux-save-status" aria-live="polite"></span>
+  </footer>
+
+  <script src="storage.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>
