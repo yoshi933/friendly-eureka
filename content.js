@@ -17,6 +17,11 @@
 (function () {
   "use strict";
 
+  if (!window.BetterClassroomUX?.SELECTORS || !window.BetterClassroomUX?.storage) {
+    console.error("[BetterClassroomUX] Required dependencies (selectors.js, storage.js) not loaded. Aborting.");
+    return;
+  }
+
   const { SELECTORS, storage } = window.BetterClassroomUX;
 
   /* ------------------------------------------------------------------ */
@@ -33,7 +38,13 @@
     return Array.from(root.querySelectorAll(selector));
   }
 
-  /** Generate a simple hash-like ID from a string (for post deduplication). */
+  /**
+   * Generate a simple non-cryptographic hash ID from a string.
+   * Used for post deduplication when Classroom does not expose a native ID.
+   * Collisions are theoretically possible but negligible for this use case.
+   * @param {string} str
+   * @returns {string}
+   */
   function hashId(str) {
     let hash = 0;
     for (let i = 0; i < str.length; i++) {

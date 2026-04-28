@@ -11,7 +11,12 @@
 /*  Helpers                                                             */
 /* ------------------------------------------------------------------ */
 
-const { storage } = window.BetterClassroomUX;
+const ns = window.BetterClassroomUX;
+if (!ns?.storage) {
+  console.error("[BetterClassroomUX] storage.js dependency not loaded. Options page may not function correctly.");
+}
+
+const { storage } = ns ?? { storage: null };
 
 function $(id) {
   return document.getElementById(id);

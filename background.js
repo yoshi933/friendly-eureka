@@ -44,7 +44,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       break;
 
     default:
-      // Unknown message type – ignore
+      console.warn("[BetterClassroomUX] Unknown message type received:", message.type);
       break;
   }
   // Return true to keep the channel open for async responses if needed

@@ -107,7 +107,11 @@
       };
 
       req.onerror = (event) => {
-        console.error("[BetterClassroomUX] IndexedDB open error", event.target.error);
+        console.error(
+          "[BetterClassroomUX] IndexedDB open error – possible causes: browser storage quota exceeded, " +
+          "incognito mode restrictions, or IndexedDB not supported. Error:",
+          event.target.error
+        );
         reject(event.target.error);
       };
     });
